@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4CHFFYLX3D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4CHFFYLX3D');
+</script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <style>
+      .loading-overlay {
+        background: rgba(255, 255, 255, 0.5); /* Đặt mức độ trong suốt ở đây */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        pointer-events: none; /* Cho phép tương tác với nội dung bên dưới */
+        display: none; /* Ẩn hiệu ứng loading ban đầu */
+      }
+
+      .loading-spinner {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        align-items: stretch;
+        justify-items: center;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      a {
+        position: relative;
+        display: inline-block;
+      }
+    </style>
+    <title>Loading . . .</title>
+  </head>
+  <body>
+    <main class="grid">
+      
+      <a href="https://smart3.playtechzone.com/category/mexican/" onclick="showLoading('68044'); ">
+        <img
+          id="image_68044"
+          src="https://stampsglovv.com/wp-content/img/a2.jpg"
+          alt="Hình ảnh"
+          style="width: 100%;"
+        />
+        <div id="loading_68044" class="loading-overlay">
+          <div class="loading-spinner"></div>
+        </div>
+      </a>
+      
+      <a href="https://smart1.playtechzone.com/category/american/" onclick="showLoading('68042'); ">
+        <img
+          id="image_68042"
+          src="https://stampsglovv.com/wp-content/img/a3.jpg"
+          alt="Hình ảnh"
+          style="width: 100%;"
+        />
+        <div id="loading_68042" class="loading-overlay">
+          <div class="loading-spinner"></div>
+        </div>
+      </a>
+      
+      <a href="https://smart2.playtechzone.com/category/american/" onclick="showLoading('68042'); ">
+        <img
+          id="image_68042"
+          src="https://stampsglovv.com/wp-content/img/a1.jpg"
+          alt="Hình ảnh"
+          style="width: 100%;"
+        />
+        <div id="loading_68042" class="loading-overlay">
+          <div class="loading-spinner"></div>
+        </div>
+      </a>
+      
+      <a href="https://smart10.playtechzone.com/category/mexican/" onclick="showLoading('1'); ">
+        <img
+          id="image_1"
+          src="https://stampsglovv.com/wp-content/img/a1.jpg"
+          alt="Hình ảnh"
+          style="width: 100%;"
+        />
+        <div id="loading_1" class="loading-overlay">
+          <div class="loading-spinner"></div>
+        </div>
+      </a>
+      
+    </main>
+
+    <script>
+      window.onload = function () {
+        
+          // Tự động click vào ảnh tương ứng khi trang được tải
+          document.querySelector(`[onclick*='1']`).click();
+        
+      };
+
+      function showLoading(imageId) {
+        // Ẩn hiệu ứng loading của tất cả các hình ảnh trước khi hiển thị hiệu ứng cho hình ảnh được click
+        document.querySelectorAll('.loading-overlay').forEach(function (overlay) {
+          overlay.style.display = 'none';
+        });
+
+        // Hiển thị hiệu ứng loading cho hình ảnh được click
+        const overlay = document.getElementById(`loading_${imageId}`);
+        if (overlay) {
+          overlay.style.display = 'flex';
+
+          // Ẩn hiệu ứng loading sau một khoảng thời gian (ví dụ: 6 giây)
+          setTimeout(function () {
+            overlay.style.display = 'none';
+          }, 6000);
+        }
+      }
+    </script>
+  </body>
+</html>
